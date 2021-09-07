@@ -23,6 +23,7 @@ createMenu();
   try {
     const promise = await fetch(url + products);
     const response = await promise.json();
+
     getFeaturedProducts(response);
   } catch (error) {
     displayMessage("error", error, ".feature__products");

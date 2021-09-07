@@ -13,6 +13,7 @@ export function getFeaturedProducts(response) {
         imageUrl = product.image_url;
       }
 
+      console.log(imageUrl);
       featureProducts.innerHTML += `<div class="card-md-6 col-lg-4">
                                         <div class= "card-img-top ratio ratio-4x3 feature--image" style="background-image:url(${imageUrl})"></div>
                                         <div class="card-body d-flex justify-content-between"> 

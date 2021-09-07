@@ -4,6 +4,7 @@ import createMenu from "./createMenu.js";
 import { getToken } from "../components/userStorage.js";
 
 createMenu();
+const token = getToken();
 
 const message = document.querySelector(".message-container");
 const title = document.querySelector("#title");
@@ -23,7 +24,6 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value.trim());
   const featuredValue = featured.value.trim();
   const imageValue = image.value;
-  //console.log(imageValue);
   const descriptionValue = description.value.trim();
 
   if (
@@ -51,7 +51,7 @@ function submitForm(event) {
 
 async function addProduct(title, price, featured, image, description) {
   const baseUrl = url + products;
-  //console.log(baseUrl);
+
   const data = JSON.stringify({
     title: title,
     price: price,
@@ -59,9 +59,7 @@ async function addProduct(title, price, featured, image, description) {
     image_url: image,
     description: description,
   });
-  const token = getToken();
-  console.log(token);
-  console.log(data);
+
   const options = {
     method: "POST",
     body: data,
@@ -73,7 +71,7 @@ async function addProduct(title, price, featured, image, description) {
   try {
     const response = await fetch(baseUrl, options);
     const json = await response.json();
-    console.log(json);
+
     if (json.created_at) {
       displayMessage(
         "success",
@@ -84,9 +82,9 @@ async function addProduct(title, price, featured, image, description) {
     }
 
     if (json.error) {
-      displayMessage("warning", json.error, ".message-container");
+      displayMessage("warning", json.message, ".message-container");
     }
   } catch (error) {
-    console.log(error);
+    displayMessage("error", "An error occured", ".message-container");
   }
 }

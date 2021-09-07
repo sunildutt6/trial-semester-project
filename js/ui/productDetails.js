@@ -17,19 +17,21 @@ export function productDetails(details) {
     cssClass = "remove";
   }
 
+  let imageUrl = "";
+  if (!details.image_url) {
+    imageUrl = url + details.image.formats.medium.url;
+  } else {
+    imageUrl = details.image_url;
+  }
+  console.log(imageUrl);
+
   products.innerHTML = `
     <h3>${details.title}</h3>
     <div class="ratio ratio-21x9 my-3 hero__banner"
-    style = "background-image: url(${url}${
-    details.image.formats.large.url
-  });" ></div>
+    style = "background-image: url(${imageUrl});" ></div>
     <p class ="card-text">Product-description: ${details.description}</p>
     <h5>Price: $${details.price}</h5>
-    <button class= "buttonToCart ${cssClass}" data-id="${
-    details.id
-  }" data-price="${details.price}" data-title = "${
-    details.title
-  }" data-image ="${url + details.image.formats.large.url}">Add to Cart</button>
+    <button class= "buttonToCart ${cssClass}" data-id="${details.id}" data-price="${details.price}" data-title = "${details.title}" data-image ="${imageUrl}">Add to Cart</button>
     `;
 
   const button = document.querySelector(".buttonToCart");
