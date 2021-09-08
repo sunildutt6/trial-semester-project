@@ -96,3 +96,13 @@ form input {
 form > div {
   margin-bottom: 1rem;
 }
+
+/*editproduct.html */
+.form-edit {
+  display: none;
+}
+
+/*deleteproduct.js*/
+.delete {
+  background-color: red;
+}

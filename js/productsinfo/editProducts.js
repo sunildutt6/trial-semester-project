@@ -1,12 +1,21 @@
-import { products, url } from "../settings/api.js";
+import { url } from "../settings/api.js";
 import displayMessage from "../components/displayMessage.js";
-import createMenu from "./createMenu.js";
+import createMenu from "../admin/createMenu.js";
+import createProductMenu from "./createProductMenu.js";
 import { getToken } from "../components/userStorage.js";
-import createProductMenu from "../productsinfo/createProductMenu.js";
+import deleteProduct from "./deleteProduct.js";
 
 createMenu();
 createProductMenu();
-const token = getToken();
+const queryStrings = document.location.search;
+const params = new URLSearchParams(queryStrings);
+const id = params.get("id");
+
+if (!id) {
+  document.location.href = "/";
+}
+
+const productUrl = url + "/products/" + id;
 
 const message = document.querySelector(".message-container");
 const title = document.querySelector("#title");
@@ -15,18 +24,39 @@ const featured = document.querySelector("#featured");
 const image = document.querySelector("#image");
 const form = document.querySelector("form");
 const description = document.querySelector("#floatingTextarea2");
+const loader = document.querySelector(".loading");
+const inputId = document.querySelector("#id");
 
-form.addEventListener("submit", submitForm);
+(async function () {
+  try {
+    const response = await fetch(productUrl);
+    const editJson = await response.json();
 
-function submitForm(event) {
+    title.value = editJson.title;
+    price.value = editJson.price;
+    featured.value = editJson.featured;
+    image.value = editJson.image_url;
+    description.value = editJson.description;
+    inputId.value = editJson.id;
+    deleteProduct(editJson.id);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loader.style.display = "none";
+    form.style.display = "block";
+  }
+})();
+
+form.addEventListener("submit", updateForm);
+function updateForm(event) {
   event.preventDefault();
-
   message.innerHTML = "";
   const titleValue = title.value.trim();
   const priceValue = parseFloat(price.value.trim());
   const featuredValue = featured.value.trim();
   const imageValue = image.value;
   const descriptionValue = description.value.trim();
+  const idValue = inputId.value;
 
   if (
     titleValue.length === 0 ||
@@ -42,28 +72,29 @@ function submitForm(event) {
       ".message-container"
     );
   }
-  addProduct(
+  updateProducts(
     titleValue,
     priceValue,
     featuredValue,
     imageValue,
-    descriptionValue
+    descriptionValue,
+    idValue
   );
 }
 
-async function addProduct(title, price, featured, image, description) {
-  const baseUrl = url + products;
-
+async function updateProducts(title, price, featured, image, description, id) {
+  const baseUrl = url + "/products/" + id;
   const data = JSON.stringify({
     title: title,
     price: price,
     featured: featured,
     image_url: image,
     description: description,
+    id: id,
   });
-
+  const token = getToken();
   const options = {
-    method: "POST",
+    method: "PUT",
     body: data,
     headers: {
       "Content-Type": "application/json",
@@ -73,20 +104,14 @@ async function addProduct(title, price, featured, image, description) {
   try {
     const response = await fetch(baseUrl, options);
     const json = await response.json();
-
-    if (json.created_at) {
-      displayMessage(
-        "success",
-        "Successfully created product",
-        ".message-container"
-      );
-      form.reset();
+    console.log(json);
+    if (json.updated_at) {
+      displayMessage("success", "Updated Product", ".message-container");
     }
-
     if (json.error) {
-      displayMessage("warning", json.message, ".message-container");
+      displayMessage("error", "Unauthorise", ".message-container");
     }
   } catch (error) {
-    displayMessage("error", "An error occured", ".message-container");
+    console.log(error);
   }
 }
