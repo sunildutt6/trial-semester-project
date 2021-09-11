@@ -1,4 +1,5 @@
 import { getUser } from "../components/userStorage.js";
+import signoutButton from "./signoutButton.js";
 
 export default function createMenu() {
   const { pathname } = document.location;
@@ -13,17 +14,18 @@ export default function createMenu() {
     </li>`;
 
   if (username) {
-    authorisedLink = `<span class="nav-link"> 🙏🏻 Hello! ${username} 🙏🏻</span>`;
+    authorisedLink = `<button class="logout"> 🙏🏻 Logout ${username} 🙏🏻</button>`;
+    // `<span class="nav-link"> 🙏🏻 Hello! ${username} 🙏🏻</span>`
   }
 
-  container.innerHTML = `<img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+  container.innerHTML = `<img src="/images/letha-logo.svg" alt="company shoe logo" width="100" height="100">
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
             <a class="nav-link ${
               pathname === "/" || pathname === "/index.html" ? "active" : ""
@@ -42,10 +44,16 @@ export default function createMenu() {
         </li>
         <li class="nav-item">
             <a class="nav-link ${
+              pathname === "/contact.html" ? "active" : ""
+            }" href="contact.html">Contact Us <i class="far fa-id-badge"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link ${
               pathname === "/add.html" ? "active" : ""
             }" href="add.html">Add Product <i class="fas fa-plus-circle"></i></a>
         </li>
         ${authorisedLink}
     </ul>
 </div>`;
+  signoutButton();
 }

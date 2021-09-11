@@ -4,10 +4,13 @@ import createMenu from "./createMenu.js";
 import { getToken } from "../components/userStorage.js";
 import createProductMenu from "../productsinfo/createProductMenu.js";
 
+const token = getToken();
+if (!token) {
+  location.href = "index.html";
+}
+
 createMenu();
 createProductMenu();
-const token = getToken();
-
 const message = document.querySelector(".message-container");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");

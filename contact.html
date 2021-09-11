@@ -21,35 +21,58 @@
     </nav>
     <!--End of navigation menu-->
 
-    <div class="container ">
-
-        <div class="menu-container"></div>
-        <h1><i class="fab fa-expeditedssl"></i> Admin Login</h1>
-
+    <div class="container">
+        <h1>Contact Form</h1>
 
         <form>
-            <div class="message-container"></div>
+            <div class="message">
 
-            <div>
-                <label for="username">Username / Email</label>
-                <input id="username" />
             </div>
 
             <div>
-                <label for="password">Password</label>
-                <input id="password" type="password" />
+                <label for="name">First name</label>
+                <input id="Fname" />
+                <div class="form-error" id="fNameError">Please enter your first name.</div>
             </div>
 
-            <button class="form-button">Submit</button>
+            <div>
+                <label for="name">Last name</label>
+                <input id="Lname" />
+                <div class="form-error" id="lNameError">Please enter your last name.</div>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" />
+                <div class="form-error" id="emailError">Please enter a valid email address.</div>
+            </div>
+
+
+
+            <div>
+                <label for="subject">Subject</label>
+                <input id="subject">
+                <div class="form-error" id="subjectError">Must be minimum 4 character</div>
+            </div>
+
+            <div>
+                <label for="Message">Message</label>
+                <textarea class="form-control" id="floatingTextarea2"
+                    placeholder="Please write your message here !"></textarea>
+                <div class="form-error" id="messageError">Must be minimum 20 character</div>
+            </div>
+            <button class="form-button">Send</button>
 
         </form>
 
     </div>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 
 
-    <script src="js/admin/login.js" type="module"></script>
+    <script src="js/contact.js" type="module"></script>
     <script src="js/footer.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
@@ -60,4 +83,4 @@
 
 </body>
 
-</html>
+</html

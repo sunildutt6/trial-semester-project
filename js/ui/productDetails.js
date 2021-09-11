@@ -31,6 +31,12 @@ export function productDetails(details) {
     style = "background-image: url(${imageUrl});" ></div>
     <p class ="card-text">Product-description: ${details.description}</p>
     <h5>Price: $${details.price}</h5>
+    <select>
+    <option selected>Choose your size</option>
+    <option value="1">35</option>
+    <option value="2">36</option>
+    <option value="3">37</option>
+  </select>
     <button class= "buttonToCart ${cssClass}" data-id="${details.id}" data-price="${details.price}" data-title = "${details.title}" data-image ="${imageUrl}">Add to Cart</button>
     `;
 

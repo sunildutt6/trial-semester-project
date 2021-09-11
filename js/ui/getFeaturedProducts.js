@@ -16,9 +16,11 @@ export function getFeaturedProducts(response) {
       console.log(imageUrl);
       featureProducts.innerHTML += `<div class="card-md-6 col-lg-4">
                                         <div class= "card-img-top ratio ratio-4x3 feature--image" style="background-image:url(${imageUrl})"></div>
-                                        <div class="card-body d-flex justify-content-between"> 
-                                        <h5>${product.title}</h5>
-                                        <i class="far fa-star fa-2x"></i>
+                                        <div class="card-body">
+                                        <i class="far fa-heart"></i>
+                                        <h4> ${product.title}  </h4>
+                                        <h5>Price: $${product.price}</h5>
+                                       <a class = "btn btn-white" href="details.html?id=${product.id}">Quick Shop</a>
                                         </div>
                                       `;
     }

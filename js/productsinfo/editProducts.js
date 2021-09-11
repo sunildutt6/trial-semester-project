@@ -5,6 +5,10 @@ import createProductMenu from "./createProductMenu.js";
 import { getToken } from "../components/userStorage.js";
 import deleteProduct from "./deleteProduct.js";
 
+const token = getToken();
+if (!token) {
+  location.href = "index.html";
+}
 createMenu();
 createProductMenu();
 const queryStrings = document.location.search;
@@ -92,7 +96,7 @@ async function updateProducts(title, price, featured, image, description, id) {
     description: description,
     id: id,
   });
-  const token = getToken();
+
   const options = {
     method: "PUT",
     body: data,

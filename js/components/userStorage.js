@@ -13,6 +13,11 @@ export function saveUser(user) {
   saveStorage(userValue, user);
 }
 
+export function clearStorage() {
+  localStorage.removeItem(tokenvalue);
+  localStorage.removeItem(userValue);
+}
+
 export function getUser() {
   const user = retrieveStorage(userValue);
   if (user) {
@@ -28,7 +33,7 @@ function saveStorage(key, value) {
 function retrieveStorage(key) {
   const value = localStorage.getItem(key);
   if (!value) {
-    return [];
+    return null;
   }
   return JSON.parse(value);
 }

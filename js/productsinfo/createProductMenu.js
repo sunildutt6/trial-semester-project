@@ -7,13 +7,13 @@ export default function createProductMenu() {
                             <li class="nav-item">
                             <h3><a class="nav-link ${
                               pathname === "/add.html" ? "active" : ""
-                            }"  href="/add.html">Add</a></h3>
+                            }"  href="/add.html">Add-New-Product <i class="fas fa-plus-square"></i></a></h3>
                           </li>
                             
                             <li class="nav-item">
                             <h3><a class="nav-link ${
                               pathname === "/showproducts.html" ? "active" : ""
-                            }" href="showproducts.html">Edit</a></h3>
+                            }" href="showproducts.html">Edit Product <i class="far fa-edit"></i></a></h3>
                           </li>
                             
                         </div>
