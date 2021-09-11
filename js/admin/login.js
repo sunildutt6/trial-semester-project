@@ -40,7 +40,7 @@ async function loginAccess(username, password) {
       // displayMessage("success", "User" + " " + json.user.role.type, ".message-container");
       saveToken(json.jwt);
       saveUser(json.user);
-      location.href = "/";
+      location.href = "/add.html";
     }
     if (json.error) {
       displayMessage(

@@ -47,11 +47,7 @@ export default function createMenu() {
               pathname === "/contact.html" ? "active" : ""
             }" href="contact.html">Contact Us <i class="far fa-id-badge"></i></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link ${
-              pathname === "/add.html" ? "active" : ""
-            }" href="add.html">Add Product <i class="fas fa-plus-circle"></i></a>
-        </li>
+       
         ${authorisedLink}
     </ul>
 </div>`;
