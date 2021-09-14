@@ -3,14 +3,14 @@ export default function createProductMenu() {
 
   const { pathname } = document.location;
   console.log(pathname);
-  productInfo.innerHTML = `<div class="nav">
-                            <li class="nav-item">
+  productInfo.innerHTML = `<div class="nav  mt-3">
+                            <li class="nav-item  mx-5">
                             <h3><a class="nav-link ${
                               pathname === "/add.html" ? "active" : ""
-                            }"  href="/add.html">Add-New-Product <i class="fas fa-plus-square"></i></a></h3>
+                            }"  href="/add.html">Add-New-Product <i class="fas fa-plus-square"></i></a></h3> 
                           </li>
                             
-                            <li class="nav-item">
+                            <li class="nav-item  mx-5">
                             <h3><a class="nav-link ${
                               pathname === "/showproducts.html" ? "active" : ""
                             }" href="showproducts.html">Edit Product <i class="far fa-edit"></i></a></h3>

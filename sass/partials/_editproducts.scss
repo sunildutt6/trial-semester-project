@@ -1,0 +1,17 @@
+@mixin formEdit {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+.form__info {
+  &--update {
+    background-color: darken($color-tertiary, $amount: 30%);
+    @include formEdit;
+  }
+  &--delete {
+    background-color: lighten($color-red, $amount: 10%);
+    @include formEdit;
+    margin: 1rem 0;
+  }
+}

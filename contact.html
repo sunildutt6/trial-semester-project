@@ -5,66 +5,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/ff08e60a93.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Login-page</title>
 </head>
 
 <body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container menu-container">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container menu-container">
+            </div>
+        </nav>
+        <!--End of navigation menu-->
+
+        <div class="container container__contact">
+            <h1>Contact Form</h1>
+
+            <form class="contact__form">
+                <div class="contact__form--message">
+
+                </div>
+
+                <div class="form__info">
+                    <label for="name" class="form__info--name">First name</label>
+                    <input id="Fname" class="form__info--input" />
+                    <div class="form__info--error" id="fNameError">Please enter your first name.</div>
+                </div>
+
+                <div class="form__info">
+                    <label for="name" class="form__info--name">Last name</label>
+                    <input id="Lname" class="form__info--input" />
+                    <div class="form__info--error" id="lNameError">Please enter your last name.</div>
+                </div>
+
+                <div class="form__info">
+                    <label for="email" class="form__info--name">Email</label>
+                    <input id="email" class="form__info--input" />
+                    <div class="form__info--error" id="emailError">Please enter a valid email address.</div>
+                </div>
+
+
+
+                <div class="form__info">
+                    <label for="subject" class="form__info--name">Subject</label>
+                    <input id="subject" class="form__info--input">
+                    <div class="form__info--error" id="subjectError">Must be minimum 4 character</div>
+                </div>
+
+                <div class="form__info">
+                    <label for="Message" class="form__info--name">Message</label>
+                    <textarea class="form__info--input" id="floatingTextarea2"
+                        placeholder="Please write your message here !"></textarea>
+                    <div class="form__info--error" id="messageError">Must be minimum 20 character</div>
+                </div>
+
+
+                <button class="form-button mb-4">Send</button>
+
+            </form>
 
         </div>
-    </nav>
-    <!--End of navigation menu-->
-
-    <div class="container">
-        <h1>Contact Form</h1>
-
-        <form>
-            <div class="message">
-
-            </div>
-
-            <div>
-                <label for="name">First name</label>
-                <input id="Fname" />
-                <div class="form-error" id="fNameError">Please enter your first name.</div>
-            </div>
-
-            <div>
-                <label for="name">Last name</label>
-                <input id="Lname" />
-                <div class="form-error" id="lNameError">Please enter your last name.</div>
-            </div>
-
-            <div>
-                <label for="email">Email</label>
-                <input id="email" />
-                <div class="form-error" id="emailError">Please enter a valid email address.</div>
-            </div>
-
-
-
-            <div>
-                <label for="subject">Subject</label>
-                <input id="subject">
-                <div class="form-error" id="subjectError">Must be minimum 4 character</div>
-            </div>
-
-            <div>
-                <label for="Message">Message</label>
-                <textarea class="form-control" id="floatingTextarea2"
-                    placeholder="Please write your message here !"></textarea>
-                <div class="form-error" id="messageError">Must be minimum 20 character</div>
-            </div>
-            <button class="form-button">Send</button>
-
-        </form>
-
     </div>
 
     <footer>

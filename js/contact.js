@@ -1,7 +1,7 @@
 import createMenu from "./admin/createMenu.js";
 
 createMenu();
-const messageSuccess = document.querySelector(".message");
+const messageSuccess = document.querySelector(".contact__form--message");
 const fName = document.querySelector("#Fname");
 const firstNameError = document.querySelector("#fNameError");
 

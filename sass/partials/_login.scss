@@ -1,0 +1,36 @@
+label {
+  display: block;
+  text-transform: uppercase;
+}
+.login__form {
+  max-width: 750px;
+  margin: 0 auto;
+  & input {
+    width: 100%;
+    padding: 0.4rem;
+    outline: none;
+    border-radius: $box-shadow;
+  }
+}
+
+.form-button {
+  @include buttonCommon;
+  background-clip: text;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    @include buttonCommonBefore;
+    content: "submit";
+  }
+  &:hover {
+    background-color: transparent;
+  }
+  &:hover::before {
+    transform: translateX(0);
+    transition: all 0.5s;
+  }
+}
+
+.login__form > div {
+  margin-bottom: 1rem;
+}

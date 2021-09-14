@@ -1,0 +1,48 @@
+.navbar {
+  background-image: linear-gradient(
+      to right,
+      rgba($color-primary, 5%),
+      rgba($color-secondary, 5%)
+    ),
+    url(/images/spikes.png);
+  font-family: $font-nav;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-shadow: 0 1px lighten($color-black, $amount: 30%);
+}
+
+.nav-link {
+  &:hover {
+    background-color: $color-tertiary;
+    color: $color-fourth !important;
+    border-radius: 0.625rem;
+  }
+}
+.active {
+  text-transform: uppercase;
+  color: $color-primary !important;
+}
+/*footer- navigation*/
+
+.footer__container {
+  padding: 1.5rem;
+}
+.social-media i {
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  color: lighten($color-primary, $amount: 10%);
+}
+
+.customer__service {
+  align-self: flex-start;
+}
+
+.footer-span {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $color-fourth !important;
+    }
+  }
+}

@@ -19,7 +19,7 @@ export function productDetails(details) {
 
   let imageUrl = "";
   if (!details.image_url) {
-    imageUrl = url + details.image.formats.medium.url;
+    imageUrl = url + details.image.formats.large.url;
   } else {
     imageUrl = details.image_url;
   }
@@ -27,17 +27,12 @@ export function productDetails(details) {
 
   products.innerHTML = `
     <h3>${details.title}</h3>
-    <div class="ratio ratio-21x9 my-3 hero__banner"
+    <div class="ratio ratio-21x9 my-3 product--image"
     style = "background-image: url(${imageUrl});" ></div>
-    <p class ="card-text">Product-description: ${details.description}</p>
-    <h5>Price: $${details.price}</h5>
-    <select>
-    <option selected>Choose your size</option>
-    <option value="1">35</option>
-    <option value="2">36</option>
-    <option value="3">37</option>
-  </select>
-    <button class= "buttonToCart ${cssClass}" data-id="${details.id}" data-price="${details.price}" data-title = "${details.title}" data-image ="${imageUrl}">Add to Cart</button>
+    <h4>Product-description:</h4>
+    <p> ${details.description}</p>
+    <h5 class="product--price">Price: $${details.price}</h5>
+    <button class= "buttonToCart ${cssClass} product--price" data-id="${details.id}" data-price="${details.price}" data-title = "${details.title}" data-image ="${imageUrl}">Add to Cart</button>
     `;
 
   const button = document.querySelector(".buttonToCart");

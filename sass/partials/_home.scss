@@ -1,0 +1,63 @@
+.hero__banner {
+  max-height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% 70%;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+
+.container {
+  &__subheading {
+    margin: 1rem;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+}
+.feature__products {
+  &--image {
+    @include featureProductsImage;
+    transition: all 1s;
+    transform: scale(0.9);
+
+    &:hover {
+      transform: rotateY(180deg) scaleX(1);
+    }
+  }
+}
+
+.btn:link,
+.btn:visited {
+  @include buttonCommon;
+  transition: all 1s;
+  position: relative;
+}
+.btn:hover {
+  transform: translatY(-3px);
+  box-shadow: 0 5px 5px $color-secondary;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  outline: $color-tertiary;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 62.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.btn-white::after {
+  background-color: $color-white;
+}
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}

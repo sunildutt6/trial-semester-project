@@ -1,0 +1,27 @@
+.card.product-cart {
+  margin: 1rem;
+}
+
+.feature__product {
+  &--image {
+    @include featureProductsImage;
+  }
+}
+
+.btn-cart {
+  @include buttonCommon;
+  background-clip: text;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    @include buttonCommonBefore;
+    content: "Proceed";
+  }
+  &:hover {
+    background-color: transparent;
+  }
+  &:hover::before {
+    transform: translateX(0);
+    transition: all 1s;
+  }
+}

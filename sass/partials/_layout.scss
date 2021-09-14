@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-image: linear-gradient(
+      to left,
+      rgba($color-tertiary, 30%),
+      rgba($color-secondary, 30%)
+    ),
+    url(/images/leather_1.png);
+  font-family: $font-body;
+  color: $color-primary;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}

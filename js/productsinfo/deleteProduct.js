@@ -3,7 +3,7 @@ import { url } from "../settings/api.js";
 
 export default function deleteProduct(id) {
   const deleteContainer = document.querySelector(".delete-product");
-  deleteContainer.innerHTML = `<button type ="button" class= "delete form-button">Delete</button>`;
+  deleteContainer.innerHTML = `<button type ="button" class= "delete form__info--input form__info--delete ">Delete</button>`;
 
   const button = document.querySelector(".delete");
   button.addEventListener("click", deleteItem);

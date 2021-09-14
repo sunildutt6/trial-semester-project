@@ -25,7 +25,7 @@ export default function createMenu() {
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+    <ul class="navbar-nav mx-auto  mb-lg-0">
         <li class="nav-item">
             <a class="nav-link ${
               pathname === "/" || pathname === "/index.html" ? "active" : ""
@@ -45,7 +45,7 @@ export default function createMenu() {
         <li class="nav-item">
             <a class="nav-link ${
               pathname === "/contact.html" ? "active" : ""
-            }" href="contact.html">Contact Us <i class="far fa-id-badge"></i></a>
+            }" href="contact.html">Contact-Us <i class="far fa-id-badge"></i></a>
         </li>
        
         ${authorisedLink}

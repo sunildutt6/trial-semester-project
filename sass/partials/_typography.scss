@@ -1,0 +1,30 @@
+h1,
+h2,
+h3 {
+  font-family: $font-header;
+}
+p {
+  font-family: $font-body;
+  color: $color-black;
+  font-size: 1.1rem;
+}
+.heading-primary {
+  color: $color-primary;
+  text-align: center;
+  margin: 1.25rem;
+
+  &-main {
+    display: block;
+    font-size: 1.875rem;
+    @include commonfontfeature;
+    animation: moveLeft 2s ease-out;
+    font-family: $font-header;
+  }
+
+  &-sub {
+    display: block;
+    @include commonfontfeature;
+    font-size: 0.94rem;
+    animation: moveRight 4s ease-out;
+  }
+}

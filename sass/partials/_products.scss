@@ -1,0 +1,20 @@
+::placeholder {
+  background-color: lighten($color: $color-white, $amount: 50%);
+  color: black;
+}
+
+.product--search {
+  padding: 0.2rem 0 0.2rem 1rem;
+  min-width: 30%;
+  transition: all 0.2s;
+  border-radius: $box-shadow;
+
+  &:focus {
+    background-color: rgba($color-tertiary, $alpha: 0.1);
+    width: 40%;
+  }
+}
+
+.feature-products a {
+  text-decoration: none;
+}

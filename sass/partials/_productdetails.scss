@@ -1,0 +1,42 @@
+.container__details {
+  margin: 1.5rem auto;
+}
+
+.breadcrumb-item.active {
+  color: $color-black !important;
+}
+
+.product--image {
+  min-height: 65vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 5px 5px $color-primary;
+  border-radius: $box-shadow;
+}
+
+p:first-letter {
+  float: left;
+  line-height: 3.25rem;
+  color: $color-primary;
+  font-size: 3.25rem;
+  padding: 0 8px;
+}
+
+.product--price {
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: $color-secondary;
+  color: white;
+  border-radius: $box-shadow;
+}
+
+.added {
+  background-color: transparent;
+  color: black;
+}
+.remove {
+  background-color: $color-tertiary;
+  color: $color-black;
+  text-decoration: line-through;
+}
