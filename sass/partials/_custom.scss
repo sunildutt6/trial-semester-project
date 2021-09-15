@@ -19,6 +19,8 @@ $box-shadow: 0.625rem;
 
 $text-shadow: 0 1px $color-black;
 
+$tablet-width: 437.5rem;
+
 @mixin commonfontfeature {
   font-weight: 400;
   letter-spacing: 0.625rem;

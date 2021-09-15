@@ -7,9 +7,9 @@ const totalPrice = document.querySelector(".total");
 createMenu();
 
 if (!cartProducts.length) {
-  featureProducts.innerHTML = `<h2 class= "my-3">Your cart is empty.😞😞😞</h2>`;
+  featureProducts.innerHTML = `<p class= "my-3">Your cart is empty.😞😞😞</p>`;
 } else {
-  featureProducts.innerHTML = `<h2 class="my-3">😀 You have selected the following products...😀</h2>`;
+  featureProducts.innerHTML = `<p class="my-3">😀 You have selected the following products...😀</p>`;
 }
 
 let sum = 0;
@@ -23,5 +23,5 @@ cartProducts.forEach((products) => {
     </div>`;
 
   sum = sum + parseFloat(products.price, 10);
-  totalPrice.innerHTML = `<h2 class = "my-2">Total: $ ${sum} </h2>`;
+  totalPrice.innerHTML = `<h1 class = "my-2">Total: $ ${sum} </h1>`;
 });

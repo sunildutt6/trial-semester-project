@@ -61,3 +61,54 @@
   transform: scale(1.5);
   opacity: 0;
 }
+/*customers review */
+.story {
+  width: 75%;
+  margin: 1.5rem auto;
+  box-shadow: 0 1rem 1rem $color-fifth;
+  background-color: white;
+  border-radius: $box-shadow;
+  color: black;
+  padding: 2rem;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__shape {
+    width: 10rem;
+    height: 10rem;
+    float: left;
+    shape-outside: circle(50% at 50%);
+    clip-path: circle(50% at 50%);
+    transform: translateX(-1rem);
+    position: relative;
+  }
+  &__image {
+    height: 115%;
+    transform: scale(1.5);
+    transition: all 0.2s;
+    backface-visibility: hidden;
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__image {
+    transform: scale(1);
+    filter: blur(2px) brightness(90%);
+  }
+}

@@ -30,7 +30,7 @@ export function productDetails(details) {
     <div class="ratio ratio-21x9 my-3 product--image"
     style = "background-image: url(${imageUrl});" ></div>
     <h4>Product-description:</h4>
-    <p> ${details.description}</p>
+    <p class= "product-description"> ${details.description}</p>
     <h5 class="product--price">Price: $${details.price}</h5>
     <button class= "buttonToCart ${cssClass} product--price" data-id="${details.id}" data-price="${details.price}" data-title = "${details.title}" data-image ="${imageUrl}">Add to Cart</button>
     `;
