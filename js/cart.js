@@ -3,11 +3,14 @@ import { getShoppingCart } from "./components/shoppingCartStorage.js";
 const cartProducts = getShoppingCart();
 const featureProducts = document.querySelector(".feature__products");
 const totalPrice = document.querySelector(".total");
+const btnCart = document.querySelector(".btn-cart");
+console.log(btnCart);
 
 createMenu();
 
 if (!cartProducts.length) {
   featureProducts.innerHTML = `<p class= "my-3">Your cart is empty.😞😞😞</p>`;
+  btnCart.style.display = "none";
 } else {
   featureProducts.innerHTML = `<p class="my-3">😀 You have selected the following products...😀</p>`;
 }
@@ -23,5 +26,5 @@ cartProducts.forEach((products) => {
     </div>`;
 
   sum = sum + parseFloat(products.price, 10);
-  totalPrice.innerHTML = `<h1 class = "my-2">Total: $ ${sum} </h1>`;
+  totalPrice.innerHTML = `<h3 class = "my-2">Total: $ ${sum} </h3>`;
 });

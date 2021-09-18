@@ -3,13 +3,16 @@ label {
   text-transform: uppercase;
 }
 .login__form {
-  max-width: 750px;
-  margin: 0 auto;
+  min-width: 50%;
+
   & input {
-    width: 100%;
-    padding: 0.4rem;
-    outline: none;
+    min-width: 40%;
+    padding: 0.5rem;
     border-radius: $box-shadow;
+    outline: none;
+    @media (min-width: $tablet-width) {
+      width: 100%;
+    }
   }
 }
 
@@ -32,5 +35,5 @@ label {
 }
 
 .login__form > div {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }

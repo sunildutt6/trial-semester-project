@@ -6,7 +6,8 @@ h3 {
 p {
   font-family: $font-body;
   color: $color-black;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
 }
 .heading-primary {
   color: $color-primary;
@@ -15,13 +16,14 @@ p {
 
   &-main {
     display: block;
-    font-size: 1.875rem;
+    font-size: 2rem;
     @include commonfontfeature;
     animation: moveLeft 2s ease-out;
     font-family: $font-header;
   }
 
   &-sub {
+    font-family: $font-body;
     display: block;
     @include commonfontfeature;
     font-size: 0.94rem;

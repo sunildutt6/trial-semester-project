@@ -13,11 +13,11 @@ export function getFeaturedProducts(response) {
         imageUrl = product.image_url;
       }
 
-      console.log(imageUrl);
-      featureProducts.innerHTML += `<div class="card-md-6 col-lg-4 ">
-                                        <div class= "card-img-top ratio ratio-4x3 feature__products--image" style="background-image:url(${imageUrl})"></div>
+      featureProducts.innerHTML += `<div class="card-md-6 col-lg-4 py-3 feature__container">
+                                        <div class= "card-img-top ratio ratio-4x3 feature__products--image" style="background-image:url(${imageUrl})">
+                                        </div>
+                                        <span class ="feature__container--para">Best Seller</span>
                                         <div class="card-body">
-                                        <i class="far fa-heart"></i>
                                         <h4> ${product.title}  </h4>
                                         <h5>Price: $${product.price}</h5>
                                        <a class = "btn btn-white" href="details.html?id=${product.id}">Quick Shop</a>

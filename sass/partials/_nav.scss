@@ -2,20 +2,22 @@
   background-image: linear-gradient(
       to right,
       rgba($color-primary, 5%),
-      rgba($color-secondary, 5%)
+      rgba($color-secondary, 15%)
     ),
     url(/images/spikes.png);
   font-family: $font-nav;
   letter-spacing: 1px;
   font-size: 1rem;
-  text-shadow: 0 1px lighten($color-black, $amount: 30%);
+  text-shadow: 0 1px lighten($color-black, $amount: 50%);
 }
 
 .nav-link {
   &:hover {
     background-color: $color-tertiary;
-    color: $color-fourth !important;
+    color: $color-black !important;
     border-radius: 0.625rem;
+    transition: all 0.5s;
+    transform: scale(1.1);
   }
 }
 .active {

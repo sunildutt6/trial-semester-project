@@ -16,12 +16,25 @@
 .feature__products {
   &--image {
     @include featureProductsImage;
-    transition: all 1s;
+    transition: all 0.5s;
     transform: scale(0.9);
-
     &:hover {
-      transform: rotateY(180deg) scaleX(1);
+      transform: scaleX(1.1);
     }
+  }
+}
+
+.feature__container {
+  position: relative;
+  &--para {
+    position: absolute;
+    top: 1.6rem;
+    left: 1rem;
+    background-color: darken($color-tertiary, $amount: 40%);
+
+    color: white;
+    border-radius: $box-shadow;
+    padding: 0.5rem;
   }
 }
 
@@ -66,7 +79,7 @@
   width: 75%;
   margin: 1.5rem auto;
   box-shadow: 0 1rem 1rem $color-fifth;
-  background-color: white;
+  background-color: transparent;
   border-radius: $box-shadow;
   color: black;
   padding: 2rem;
@@ -87,7 +100,7 @@
   }
   &__image {
     height: 115%;
-    transform: scale(1.5);
+    transform: scale(1);
     transition: all 0.2s;
     backface-visibility: hidden;
   }
@@ -108,7 +121,7 @@
   }
 
   &:hover &__image {
-    transform: scale(1);
+    transform: scale(1.5);
     filter: blur(2px) brightness(90%);
   }
 }

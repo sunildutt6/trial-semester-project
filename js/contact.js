@@ -17,6 +17,8 @@ const subjectError = document.querySelector("#subjectError");
 const message = document.querySelector("#floatingTextarea2");
 const messageError = document.querySelector("#messageError");
 
+const button = document.querySelector(".form-button");
+
 form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
@@ -56,8 +58,9 @@ function submitForm(event) {
     lengthCheck(message.value, 19) &&
     validateEmail(email.value)
   ) {
-    messageSuccess.innerHTML = `<h4>Thank you for contacting us...</h4>`;
+    messageSuccess.innerHTML = `<h4>Thank you for contacting us😀...</h4>`;
     form.reset();
+    form.style.display = "none";
   } else {
     messageSuccess.innerHTML = "";
   }

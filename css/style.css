@@ -10755,6 +10755,7 @@ body {
   background-image: linear-gradient(to left, rgba(195, 244, 170, 0.3), rgba(0, 117, 188, 0.3)), url(/images/leather_1.png);
   font-family: "Play", sans-serif;
   color: #0076bd;
+  font-kerning: normal;
 }
 
 .wrapper {
@@ -10766,17 +10767,19 @@ footer {
 }
 
 .navbar {
-  background-image: linear-gradient(to right, rgba(0, 118, 189, 0.05), rgba(0, 117, 188, 0.05)), url(/images/spikes.png);
+  background-image: linear-gradient(to right, rgba(0, 118, 189, 0.05), rgba(0, 117, 188, 0.15)), url(/images/spikes.png);
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 1px;
   font-size: 1rem;
-  text-shadow: 0 1px #4d4d4d;
+  text-shadow: 0 1px gray;
 }
 
 .nav-link:hover {
   background-color: #c3f4aa;
-  color: #003953 !important;
+  color: #000000 !important;
   border-radius: 0.625rem;
+  transition: all 0.5s;
+  transform: scale(1.1);
 }
 
 .active {
@@ -10817,7 +10820,8 @@ h3,
 p {
   font-family: "Play", sans-serif;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
 }
 
 .heading-primary {
@@ -10827,7 +10831,7 @@ p {
 }
 .heading-primary-main {
   display: block;
-  font-size: 1.875rem;
+  font-size: 2rem;
   font-weight: 400;
   letter-spacing: 0.625rem;
   text-transform: uppercase;
@@ -10836,6 +10840,7 @@ p {
   font-family: "Noticia Text", serif;
 }
 .heading-primary-sub {
+  font-family: "Play", sans-serif;
   display: block;
   font-weight: 400;
   letter-spacing: 0.625rem;
@@ -10909,11 +10914,29 @@ p {
   background-position: center center;
   box-shadow: 0 2px 2px #0076bd;
   border-radius: 0.625rem;
-  transition: all 1s;
+  transition: all 0.5s;
   transform: scale(0.9);
 }
 .feature__products--image:hover {
-  transform: rotateY(180deg) scaleX(1);
+  transform: scaleX(1.1);
+}
+
+.feature__container {
+  position: relative;
+}
+.feature__container--para {
+  position: absolute;
+  top: 1.6rem;
+  left: 1rem;
+  background-color: #4fba18;
+  color: white;
+  border-radius: 0.625rem;
+  padding: 0.5rem;
+}
+
+.line-break::before, .line-break::after {
+  content: "§§§";
+  padding: 1rem;
 }
 
 .btn:link,
@@ -10968,7 +10991,7 @@ p {
   width: 75%;
   margin: 1.5rem auto;
   box-shadow: 0 1rem 1rem #032c48;
-  background-color: white;
+  background-color: transparent;
   border-radius: 0.625rem;
   color: black;
   padding: 2rem;
@@ -10990,7 +11013,7 @@ p {
 }
 .story__image {
   height: 115%;
-  transform: scale(1.5);
+  transform: scale(1);
   transition: all 0.2s;
   backface-visibility: hidden;
 }
@@ -11010,7 +11033,7 @@ p {
   transform: translate(-50%, -50%);
 }
 .story:hover .story__image {
-  transform: scale(1);
+  transform: scale(1.5);
   filter: blur(2px) brightness(90%);
 }
 
@@ -11085,14 +11108,18 @@ label {
 }
 
 .login__form {
-  max-width: 750px;
-  margin: 0 auto;
+  min-width: 50%;
 }
 .login__form input {
-  width: 100%;
-  padding: 0.4rem;
-  outline: none;
+  min-width: 40%;
+  padding: 0.5rem;
   border-radius: 0.625rem;
+  outline: none;
+}
+@media (min-width: 437.5rem) {
+  .login__form input {
+    width: 100%;
+  }
 }
 
 .form-button {
@@ -11129,9 +11156,13 @@ label {
 }
 
 .login__form > div {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 
+.contact__form {
+  width: 100%;
+  margin: 0 auto;
+}
 .contact__form--message h4, .contact__form--message .h4 {
   padding: 1.25rem;
   color: #000000;
@@ -11150,14 +11181,14 @@ label {
   text-shadow: 0 1px #000000;
 }
 .form__info--input {
-  width: 50%;
+  min-width: 60%;
   padding: 0.5rem;
   border-radius: 0.625rem;
   outline: none;
 }
-@media (max-width: 650px) {
+@media (min-width: 437.5rem) {
   .form__info--input {
-    width: 80%;
+    width: 100%;
   }
 }
 .form__info--error {
@@ -11202,6 +11233,7 @@ label {
   color: #0076bd;
   font-size: 3.25rem;
   padding: 0 8px;
+  font-style: italic;
 }
 
 .product--price {

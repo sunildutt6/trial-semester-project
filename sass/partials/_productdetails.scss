@@ -15,12 +15,21 @@
   border-radius: $box-shadow;
 }
 
+// .products__about {
+//   // display: flex;
+//   // flex-direction: column;
+//   // align-items: center;
+//   // align-self: baseline;
+//   padding-left: 3rem;
+// }
+
 .product-description:first-letter {
   float: left;
   line-height: 3.25rem;
   color: $color-primary;
   font-size: 3.25rem;
   padding: 0 8px;
+  font-style: italic;
 }
 
 .product--price {

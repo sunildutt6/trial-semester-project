@@ -12,7 +12,19 @@ export function renderProducts(json) {
       imageUrl = product.image_url;
     }
 
-    featureProducts.innerHTML += `<a class="card-md-6 col-lg-4 py-3" href="details.html?id=${product.id}">
+    if (product.featured) {
+      featureProducts.innerHTML += `<a class="card-md-6 col-lg-4 py-3 feature__container" href="details.html?id=${product.id}">
+      <div class= "card-img-top ratio ratio-4x3 feature__products--image" style="background-image:url(${imageUrl})">
+      </div>
+      <span class ="feature__container--para ">Best Seller</span>
+      <div class="card-body">
+      <h4>${product.title}</h4>
+     <h5>Price: $${product.price}</h5>
+      </div>
+      </a>
+    `;
+    } else {
+      featureProducts.innerHTML += `<a class="card-md-6 col-lg-4 py-3" href="details.html?id=${product.id}">
                                 <div class= "card-img-top ratio ratio-4x3 feature__products--image" style="background-image:url(${imageUrl})"></div>
                                     <div class="card-body">
                                     <h4>${product.title}</h4>
@@ -20,5 +32,6 @@ export function renderProducts(json) {
                                     </div>
                                     </a>
                                     `;
+    }
   });
 }

@@ -1,4 +1,7 @@
 .contact__form {
+  width: 100%;
+  margin: 0 auto;
+
   &--message h4 {
     padding: 1.25rem;
     color: $color-black;
@@ -18,13 +21,12 @@
     text-shadow: $text-shadow;
   }
   &--input {
-    width: 50%;
+    min-width: 60%;
     padding: 0.5rem;
     border-radius: $box-shadow;
     outline: none;
-
-    @media (max-width: 650px) {
-      width: 80%;
+    @media (min-width: $tablet-width) {
+      width: 100%;
     }
   }
   &--error {
